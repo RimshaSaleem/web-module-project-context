@@ -1,14 +1,14 @@
 import React from 'react';
-
-import { ShoppingCartContext } from '../context/ShoppingCartContext';
 import { useContext } from 'react';
-
+import { ShoppingCartContext } from './../context/ShoppingCartContext';
 // Components
 import Item from './ShoppingCartItem';
 
 const ShoppingCart = () => {
-	const cart = useContext(ShoppingCartContext);
+
+	const  { cart } = useContext(ShoppingCartContext);
 	const getCartTotal = () => {
+
 		return cart.reduce((acc, value) => {
 			return acc + value.price;
 		}, 0).toFixed(2);

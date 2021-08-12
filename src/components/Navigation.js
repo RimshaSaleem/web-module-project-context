@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 // const Navigation = props => {
 	const Navigation = () => {
-		const cart = useContext(ShoppingCartContext);
+		const { cart } = useContext(ShoppingCartContext)
 	return (
 		<div className="navigation">
 			<NavLink to="/">Products</NavLink>

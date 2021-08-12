@@ -6,8 +6,8 @@ import data from './data';
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
-import {ProductContext} from './context/ProductContext';
-import {ShoppingCartContext} from './context/ShoppingCartContext';
+import { ProductContext } from './context/ProductContext';
+import { ShoppingCartContext } from './context/ShoppingCartContext';
 
 
 function App() {
@@ -21,18 +21,21 @@ function App() {
 
 	return (
 		<div className="App">
-			<ProductContext.Provider  value ={{products,addItem}}>
-			<Navigation cart={cart} />
+			<ProductContext.Provider  value ={{ products,addItem }}>
+				<ShoppingCartContext.Provider value={{ cart }}>
+			<Navigation />
 
 			{/* Routes */}
 			<Route exact path="/">
-				<Products products={products} addItem={addItem} />
+				<Products />
 			</Route>
-			</ProductContext.Provider>
+			
 
 			<Route path="/cart">
-				<ShoppingCart cart={cart} />
+				<ShoppingCart />
 			</Route>
+			</ShoppingCartContext.Provider>
+			</ProductContext.Provider>
 		</div>
 	);
 }
