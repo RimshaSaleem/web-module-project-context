@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { ShoppingCartContext } from '../context/ShoppingCartContext';
+import { useContext } from 'react';
 
 const Navigation = props => {
 	return (
